@@ -1,2 +1,966 @@
-# rich-joshua
-A new brand of agropreneurship technology poised to take agribusiness by storm.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOSHUA-RICH AGRO-TECH INDUSTRIES LIMITED</title>
+    <meta name="description" content="Leading agribusiness company in Nigeria supplying bulk farm produce, livestock, poultry, fisheries & premium animal feeds to government institutions and commercial buyers.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --secondary-green: #4a7c59;
+            --accent-green: #6b9e82;
+            --light-green: #e8f5e9;
+            --brown: #8b5a2b;
+            --light-brown: #f5f0e6;
+            --white: #ffffff;
+            --gray: #666666;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333333;
+            --gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .cta-button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(45, 90, 39, 0.9), rgba(45, 90, 39, 0.95)), url('https://placehold.co/1200x600/2d5a27/ffffff?text=Nigerian+Agricultural+Production') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-green);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            border: 2px solid var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid var(--white);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-green);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* What We Do */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            height: 120px;
+            background: var(--light-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 3rem;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            background: var(--light-green);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mv-card {
+            background: var(--light-green);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .mv-card h4 {
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Partnerships */
+        .partnerships {
+            background: var(--light-brown);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .partner-item {
+            padding: 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .partner-item i {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-item i {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-top: 5px;
+            min-width: 24px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-green);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-green);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: var(--light-green);
+        }
+
+        /* Edit Button */
+        .edit-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--dark-gray);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .edit-btn:hover {
+            background: #c19a2a;
+            transform: translateY(-2px);
+        }
+
+        .edit-btn i {
+            margin-right: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-text">JOSHUA-RICH<br>AGRO-TECH INDUSTRIES LIMITED</div>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">What We Do</a>
+                    <a href="#why-us">Why Choose Us</a>
+                    <a href="#partnerships">Partnerships</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <a href="#contact" class="cta-button">Get Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Reliable Agricultural Production & Supply for Food Security and Economic Growth</h1>
+                <p>Joshua-Rich Agro-Tech Industries Limited is a fully integrated agribusiness company delivering high-quality crops, livestock, poultry, fisheries, and nutrient-rich feeds to institutional, commercial, and bulk buyers across Nigeria.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Request Bulk Quote</a>
+                    <a href="#partnerships" class="btn-secondary">Government Partnerships</a>
+                    <a href="#contact" class="btn-secondary">Contact Our Office</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <p>Comprehensive agricultural production and supply solutions for institutional and commercial buyers</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Crop Production</h3>
+                        <p>Large-scale production and bulk supply of yams, cassava, potatoes, beans, maize, assorted vegetables, and fruits using modern, sustainable farming methods to ensure food security and consistent supply.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Livestock, Poultry & Fisheries</h3>
+                        <p>Production and supply of goats, sheep, cattle, pigs, layers, broilers, cockerels, and fresh & dried fish under strict animal health, hygiene, and biosecurity standards.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>High-Nutrient Animal & Fish Feeds</h3>
+                        <p>Manufacture and supply of premium-quality poultry, livestock, and fish feeds formulated to improve growth performance, productivity, and feed efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" style="background-color: var(--light-green);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Government & Partners Choose Us</h2>
+                <p>Trusted by institutions for reliable, quality agricultural supply</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h4>Scalable Capacity</h4>
+                    <p>Scalable agricultural production capacity to meet large institutional demands</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Quality Assurance</h4>
+                    <p>Quality assurance and compliance standards for safe, reliable products</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Sustainable Practices</h4>
+                    <p>Sustainable and modern farming practices that protect the environment</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck-loading"></i>
+                    <h4>Reliable Supply</h4>
+                    <p>Reliable bulk supply for institutions with consistent delivery schedules</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Food Security</h4>
+                    <p>Strong contribution to national and regional food security objectives</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Professional Management</h4>
+                    <p>Professional agribusiness management with proven track record</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Government-ready agribusiness committed to strengthening Nigeria's agricultural value chain</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Company Overview</h3>
+                    <p>Joshua-Rich Agro-Tech Industries Limited is a registered agribusiness and Agro-Tech company committed to strengthening Nigeria’s agricultural value chain through integrated crop production, livestock and poultry farming, fisheries, and high-quality animal and fish feed production.</p>
+                    <p>The company supports national food security objectives by delivering reliable, safe, and high-quality agricultural products for government institutions, commercial buyers, and regional markets.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mv-card">
+                            <h4>Our Mission</h4>
+                            <p>To deliver high-quality agricultural products through sustainable farming, innovation, and professional agribusiness practices that support food security, job creation, and economic growth.</p>
+                        </div>
+                        <div class="mv-card">
+                            <h4>Our Vision</h4>
+                            <p>To become a leading agribusiness and Agro-Tech company in Nigeria and West Africa, recognized for quality, scale, and reliability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/500x400/4a7c59/ffffff?text=Integrated+Agribusiness" alt="Joshua-Rich Agro-Tech Integrated Operations" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships -->
+    <section id="partnerships" class="partnerships">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bulk Orders & Institutional Partnerships</h2>
+                <p>We partner with diverse organizations to ensure reliable agricultural supply</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <i class="fas fa-building"></i>
+                    <h4>Government Agencies</h4>
+                    <p>National & state programs</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-school"></i>
+                    <h4>Educational Institutions</h4>
+                    <p>Schools & universities</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-hospital"></i>
+                    <h4>Healthcare Facilities</h4>
+                    <p>Hospitals & clinics</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-utensil-spoon"></i>
+                    <h4>Food Processors</h4>
+                    <p>Agro-processors & manufacturers</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-store"></i>
+                    <h4>Wholesalers</h4>
+                    <p>Distributors & retailers</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-hotel"></i>
+                    <h4>Hospitality Sector</h4>
+                    <p>Hotels & caterers</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-globe-africa"></i>
+                    <h4>Export Markets</h4>
+                    <p>Regional trade partners</p>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-file-contract"></i>
+                    <h4>Framework Contracts</h4>
+                    <p>Long-term supply agreements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch for bulk orders, partnerships, or general inquiries</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Business Office</h4>
+                            <p>Joshua-Rich Haven, by State Housing Estate Umuguma, Owerri West LGA, Imo State, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>richmanemeh137@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Numbers</h4>
+                            <p>+234 803 589 8092<br>+234 708 991 4143</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-share-alt"></i>
+                        <div>
+                            <h4>Social Media</h4>
+                            <p>
+                                <a href="https://facebook.com/JoshuaRichAgroTech" target="_blank" style="color: var(--primary-green); text-decoration: none;">Facebook</a> | 
+                                <a href="https://instagram.com/JoshuaRichAgroTech" target="_blank" style="color: var(--primary-green); text-decoration: none;">Instagram</a> | 
+                                <a href="https://linkedin.com/company/JoshuaRichAgroTech" target="_blank" style="color: var(--primary-green); text-decoration: none;">LinkedIn</a> | 
+                                <a href="https://x.com/JoshuaRichAgro" target="_blank" style="color: var(--primary-green); text-decoration: none;">X (Twitter)</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organization/Institution</label>
+                            <input type="text" id="organization" name="organization">
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry">Inquiry Type</label>
+                            <select id="inquiry" name="inquiry" required>
+                                <option value="">Select Inquiry Type</option>
+                                <option value="bulk">Bulk Order Request</option>
+                                <option value="partnership">Government Partnership</option>
+                                <option value="institutional">Institutional Supply</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="Please specify your requirements, quantities needed, and preferred delivery timeline..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%; padding: 12px;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>JOSHUA-RICH AGRO-TECH INDUSTRIES LIMITED</h4>
+                    <p>Reliable agricultural production & supply for food security and economic growth across Nigeria and West Africa.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/JoshuaRichAgroTech" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/JoshuaRichAgroTech" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/JoshuaRichAgroTech" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/JoshuaRichAgro" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">What We Do</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#partnerships">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Crop Production</a></li>
+                        <li><a href="#services">Livestock & Poultry</a></li>
+                        <li><a href="#services">Fisheries</a></li>
+                        <li><a href="#services">Animal & Fish Feeds</a></li>
+                        <li><a href="#partnerships">Bulk Supply</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Imo State, Nigeria</li>
+                        <li><i class="fas fa-envelope"></i> richmanemeh137@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +234 803 589 8092</li>
+                        <li><i class="fas fa-phone"></i> +234 708 991 4143</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 JOSHUA-RICH AGRO-TECH INDUSTRIES LIMITED. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Edit Button -->
+    <a href="#" class="edit-btn">
+        <i class="fas fa-edit"></i> Edit Website Content
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you shortly regarding your request.');
+                contactForm.reset();
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Edit button functionality
+        const editBtn = document.querySelector('.edit-btn');
+        if (editBtn) {
+            editBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('This website is designed for easy self-editing! To update content:\n\n1. Contact your web developer to implement a CMS (WordPress recommended)\n2. You\'ll receive admin login credentials\n3. Update products, prices, photos, blog posts, and contact details yourself\n4. Upload tenders, certifications, and announcements easily\n\nFor immediate assistance, contact: richmanemeh137@gmail.com');
+            });
+        }
+    </script>
+</body>
+</html>
+
